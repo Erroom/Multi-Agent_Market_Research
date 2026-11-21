@@ -18,8 +18,6 @@ A simple Streamlit application that generates a short company or industry resear
 - Tavily API key for live web research
 - Internet connection
 
-The application uses `gpt-4.1-mini` by default. You can change the model using `OPENAI_MODEL` in `.env` to a model available to your OpenAI account.
-
 ## Setup on Windows (PowerShell)
 
 1. Download or clone this repository.
@@ -28,13 +26,6 @@ The application uses `gpt-4.1-mini` by default. You can change the model using `
 
    ```powershell
    python -m venv venv
-   .\venv\Scripts\Activate.ps1
-   ```
-
-   If PowerShell blocks activation, run:
-
-   ```powershell
-   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
    .\venv\Scripts\Activate.ps1
    ```
 
