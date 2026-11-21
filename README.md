@@ -16,7 +16,6 @@ A simple Streamlit application that generates a short company or industry resear
 - Python 3.10 or newer
 - OpenAI API key
 - Tavily API key for live web research
-- Internet connection
 
 ## Setup on Windows (PowerShell)
 
