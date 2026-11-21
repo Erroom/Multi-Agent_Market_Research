@@ -20,3 +20,5 @@ No competitors are listed because the sample dataset does not contain verified c
 - Verified market size and growth rate.
 - Current competitor market shares.
 - Recent customer survey and pricing data.
+
+![alt text](image.png)
