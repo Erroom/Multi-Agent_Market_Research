@@ -16,9 +16,6 @@ A simple Streamlit application that generates a short company or industry resear
 - Python 3.10 or newer
 - OpenAI API key
 - Tavily API key for live web research
-- Internet connection
-
-The application uses `gpt-4.1-mini` by default. You can change the model using `OPENAI_MODEL` in `.env` to a model available to your OpenAI account.
 
 ## Setup on Windows (PowerShell)
 
@@ -28,13 +25,6 @@ The application uses `gpt-4.1-mini` by default. You can change the model using `
 
    ```powershell
    python -m venv venv
-   .\venv\Scripts\Activate.ps1
-   ```
-
-   If PowerShell blocks activation, run:
-
-   ```powershell
-   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
    .\venv\Scripts\Activate.ps1
    ```
 
@@ -50,37 +40,11 @@ The application uses `gpt-4.1-mini` by default. You can change the model using `
    Copy-Item .env.example .env
    ```
 
-6. Open `.env` and add your own API keys:
-
-   ```env
-   OPENAI_API_KEY=your_openai_api_key
-   OPENAI_MODEL=gpt-4.1-mini
-   TAVILY_API_KEY=your_tavily_api_key
-   ```
-
-7. Start the application:
+6. Start the application:
 
    ```powershell
    streamlit run app.py
    ```
-
-8. Streamlit will provide a local URL, usually `http://localhost:8501`. Open it in your browser.
-
-## Setup on macOS / Linux
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-python -m pip install -r requirements.txt
-cp .env.example .env
-```
-
-Add your API keys to `.env`, then run:
-
-```bash
-streamlit run app.py
-```
-
 ## How the workflow works
 
 ```text
@@ -100,17 +64,9 @@ Critic -------- OpenAI reviews the brief
    +-- Not approved --> One analyst revision --> Final brief
 ```
 
-All agent handoffs use the shared `ResearchState` and related Pydantic models in `models/state.py`.
-
 ## Sample output
 
 See [`outputs/sample_output.md`](outputs/sample_output.md). It is clearly labelled as illustrative and is not presented as verified market research.
-
-## Run the data-model check
-
-```powershell
-python -c "from models.state import ResearchState; s=ResearchState(query='Analyze the food delivery market in Nepal'); print(s.model_dump_json(indent=2))"
-```
 
 ## Project structure
 
@@ -136,12 +92,6 @@ multi-agent-market-research/
 ├── requirements.txt
 └── README.md
 ```
-
-## Security
-
-- Never commit `.env` or API keys.
-- Commit `.env.example` with placeholder values only.
-- Do not paste API keys into issue trackers, screenshots, or public repositories.
 
 ## Limitations
 
